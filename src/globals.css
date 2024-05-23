@@ -17,3 +17,12 @@ body {
     text-wrap: balance;
   }
 }
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    border: 1px solid black;
+    font-size: 1.5rem;
+  }
+}
