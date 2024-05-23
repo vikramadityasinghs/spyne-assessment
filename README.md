@@ -1,6 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
+# Caption Generator
+## Deployed Link
+[https://captions-generator.netlify.app/caption-generator](https://captions-generator.netlify.app/caption-generator)
+## To Run Locally
+### Getting Started
 
 First, run the development server:
 
