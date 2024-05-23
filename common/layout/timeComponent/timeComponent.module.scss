@@ -1,0 +1,114 @@
+.captionWrapper {
+  display: flex;
+  .captionMainDiv {
+    gap: 0.2rem;
+    .captionContainer {
+      .inputField {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        resize: none;
+        overflow: hidden;
+      }
+    }
+    .timeWrapper {
+      display: flex;
+      gap: 1rem;
+      .timeContainer {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 0.5rem;
+        .timeInput {
+          display: flex;
+          input {
+            text-align: center;
+            &[type="number"] {
+              width: 40px;
+            }
+            &[type="range"] {
+              color: black;
+              @media screen and (max-width: 768px) {
+                width: 100px;
+              }
+            }
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            // Firefox specific styles
+            &[type="number"] {
+              -moz-appearance: textfield;
+            }
+          }
+        }
+      }
+    }
+  }
+  .addButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    .addEntryBtn {
+      // background-color: rgb(121, 238, 160);
+      padding: 0.5rem;
+      border: 1px solid grey;
+      border-radius: 0.25rem;
+    }
+  }
+}
+
+.generateButton {
+  padding: 0.5rem;
+  background-color: #ffa27f;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.rmEntryBtn {
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.entryContainer {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.textContainer {
+  flex: 1;
+  max-width: 60%;
+  overflow: hidden;
+  padding-right: 10px;
+}
+.textContainer {
+  p {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+.textContainer span {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}

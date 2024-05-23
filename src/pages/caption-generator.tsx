@@ -1,23 +1,35 @@
 "use client";
-
 import React, { useState } from "react";
-import CaptionsComponent from "../../common/components/captionsComponent/captionsComponent";
-import VideoComponent from "../../common/components/videoComponent/videoComponent";
+import CaptionsComponent from "../../common/layout/captionsComponent/captionsComponent";
+import VideoComponent from "../../common/layout/videoComponent/videoComponent";
 export default function Home() {
   const [videoUrl, SetVideoUrl] = useState("");
   const [subtitlesUrl, setSubtitlesUrl] = useState("");
 
   return (
-    <main className="">
-      <div className="inputContainer">
-        <input
-          type="text"
-          onChange={(e) => SetVideoUrl(e.target.value)}
-          value={videoUrl}
-        />
+    <main className="mainContainer">
+      <div className="bodyContainer">
+        <div className="captionsContainer">
+          <CaptionsComponent setCaption={setSubtitlesUrl} />
+        </div>
       </div>
-      <VideoComponent captions={subtitlesUrl} videoUrl={videoUrl} />
-      <CaptionsComponent setCaption={setSubtitlesUrl} />
+      <div className="inputWrapper">
+        <div className="inputContainer">
+          <div className="inputDiv" style={{}}>
+            <h2>Video Address</h2>
+            <input
+              style={{ width: "100%" }}
+              type="text"
+              onChange={(e) => SetVideoUrl(e.target.value)}
+              value={videoUrl}
+              placeholder="add Video address here"
+            />
+          </div>
+        </div>
+        <div className="videoContainer">
+          <VideoComponent captions={subtitlesUrl} videoUrl={videoUrl} />
+        </div>
+      </div>
     </main>
   );
 }
@@ -33,7 +45,6 @@ export default function Home() {
 //     return null;
 //   }
 // };
-
 // const handleButtonClick = async () => {
 // console.log("buttonClicked");
 // try {

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import HoursMinutesMillisecondsInput from "./timeComponent";
+import HoursMinutesMillisecondsInput from "../timeComponent/timeComponent";
 import { generateWebVTT } from "../../../src/utils/subtitles";
-export default function CaptionsComponent({ setCaption }) {
+import styles from "./captionsComponent.module.scss";
+export default function CaptionsComponent({ setCaption }: any) {
   const [captions, setCaptions] = useState({});
 
   const addCaption = ({ ...data }) => {
@@ -13,7 +14,7 @@ export default function CaptionsComponent({ setCaption }) {
     setCaption(data);
   }
 
-  async function writeSubtitlesToFile(captions) {
+  async function writeSubtitlesToFile(captions: any) {
     try {
       const response = await fetch("/api/writeSubtitles", {
         method: "POST",
@@ -34,10 +35,8 @@ export default function CaptionsComponent({ setCaption }) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div style={{ border: "1px solid black" }}>
-        <HoursMinutesMillisecondsInput handleCaption={addCaption} />
-      </div>
-    </main>
+    <div className={styles.hoursComponentWrapper}>
+      <HoursMinutesMillisecondsInput handleCaption={addCaption} />
+    </div>
   );
 }
